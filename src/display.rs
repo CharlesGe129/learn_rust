@@ -1,6 +1,6 @@
-use std::fmt;
+//use std::fmt;
 
-fn display() {
+fn display_test() {
     #[derive(Debug)]
     struct Complex {
         real: f64,

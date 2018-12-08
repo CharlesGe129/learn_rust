@@ -1,5 +1,7 @@
 include!("display.rs");
+include!("list.rs");
 
+use std::fmt;
 
 fn main() {
     println!("{} of {:b} people know binary, the other half doesn't", 1, 2);
@@ -11,5 +13,6 @@ fn main() {
     println!("Now {:?} is printable!", Structure(3));
     println!("And pretty print version: \n {:#?}", Structure(3));
 
-    display();
+    display_test();
+    list_test();
 }
