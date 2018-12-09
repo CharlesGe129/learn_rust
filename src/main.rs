@@ -1,5 +1,9 @@
 include!("display.rs");
 include!("list.rs");
+include!("literals_operators.rs");
+include!("array.rs");
+include!("str.rs");
+include!("struct.rs");
 
 use std::fmt;
 
@@ -15,4 +19,8 @@ fn main() {
 
     display_test();
     list_test();
+    literal_operator_test();
+    array_test();
+    str_test();
+    struct_test();
 }
