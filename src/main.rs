@@ -4,6 +4,7 @@ include!("literals_operators.rs");
 include!("array.rs");
 include!("str.rs");
 include!("struct.rs");
+include!("control_flow.rs");
 
 use std::fmt;
 
@@ -23,4 +24,5 @@ fn main() {
     array_test();
     str_test();
     struct_test();
+    control_flow_test();
 }
