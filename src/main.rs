@@ -5,6 +5,8 @@ include!("array.rs");
 include!("str.rs");
 include!("struct.rs");
 include!("control_flow.rs");
+include!("function.rs");
+include!("method.rs");
 
 use std::fmt;
 
@@ -25,4 +27,6 @@ fn main() {
     str_test();
     struct_test();
     control_flow_test();
+    function_test();
+    method_test();
 }
