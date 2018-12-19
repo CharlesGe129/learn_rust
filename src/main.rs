@@ -9,6 +9,7 @@ include!("function.rs");
 include!("method.rs");
 include!("trait.rs");
 include!("inheritance.rs");
+include!("generics.rs");
 
 use std::fmt;
 
@@ -33,4 +34,5 @@ fn main() {
     method_test();
     trait_test();
     inheritance_test();
+    generics_test();
 }
