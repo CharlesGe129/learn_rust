@@ -1,1 +1,1 @@
-I 123 Rust123.
+I love Rust.

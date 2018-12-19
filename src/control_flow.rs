@@ -19,6 +19,10 @@ fn for_test() {
     for i in [0, 1, 2].iter() {
         println!("{}", i);
     }
+
+    for (no, j) in "line1\nline2\nline3".lines().enumerate() {
+        println!("#{}: {}", no, j)
+    }
 }
 
 fn while_test() {
