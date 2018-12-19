@@ -7,6 +7,8 @@ include!("struct.rs");
 include!("control_flow.rs");
 include!("function.rs");
 include!("method.rs");
+include!("trait.rs");
+include!("inheritance.rs");
 
 use std::fmt;
 
@@ -29,4 +31,6 @@ fn main() {
     control_flow_test();
     function_test();
     method_test();
+    trait_test();
+    inheritance_test();
 }
