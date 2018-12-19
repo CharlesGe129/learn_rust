@@ -1,9 +1,9 @@
 include!("display.rs");
-include!("list.rs");
+include!(complicated/list.rs);
 include!("literals_operators.rs");
 include!("array.rs");
 include!("str.rs");
-include!("struct.rs");
+include!(complicated/struct.rs);
 include!("control_flow.rs");
 include!("function.rs");
 include!("method.rs");
