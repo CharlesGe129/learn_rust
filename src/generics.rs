@@ -9,8 +9,8 @@ fn generics() {
         None,
     }
 
-    let x: Option<i32> = Some(5);
-    let y: Option<f64> = Some(5.0_f64);
+//    let x: Option<i32> = Some(5);
+//    let y: Option<f64> = Some(5.0_f64);
 
     fn make_pair<T, U>(a: T, b: U) -> (T, U) {
         (a, b)

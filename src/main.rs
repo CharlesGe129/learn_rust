@@ -10,8 +10,10 @@ include!("method.rs");
 include!("trait.rs");
 include!("inheritance.rs");
 include!("generics.rs");
+include!("io.rs");
 
 use std::fmt;
+use std::io;
 
 fn main() {
     println!("{} of {:b} people know binary, the other half doesn't", 1, 2);
@@ -35,4 +37,5 @@ fn main() {
     trait_test();
     inheritance_test();
     generics_test();
+    io_test();
 }
