@@ -12,13 +12,14 @@ include!("inheritance.rs");
 include!("generics.rs");
 include!("io.rs");
 include!("problems/verify_closable.rs");
+include!("problems/triangle_expensive_path.rs");
 
 use std::fmt;
 use std::io;
 
 fn main() {
-    examples();
-//    problems();
+//    examples();
+    problems();
 }
 
 fn examples() {
@@ -47,5 +48,6 @@ fn examples() {
 }
 
 fn problems() {
-    verify_closable_test();
+//    verify_closable_test();
+    triangle_expensive_path();
 }
