@@ -42,6 +42,12 @@ fn file_out() {
     }
 }
 
+fn file_out_example2() {
+    let mut f = File::open("src/hello.txt").expect("File not found");
+    let mut content = String::new();
+    f.read_to_string(&mut content).expect("read failed");
+}
+
 fn file_in() {
     static INPUT_CONTENT: &'static str = "I love Rust.";
 
