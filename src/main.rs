@@ -17,8 +17,8 @@ use std::fmt;
 use std::io;
 
 fn main() {
-//    examples();
-    problems();
+    examples();
+//    problems();
 }
 
 fn examples() {
