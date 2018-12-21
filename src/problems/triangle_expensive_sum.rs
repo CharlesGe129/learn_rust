@@ -1,4 +1,4 @@
-fn triangle_expensive_path() {
+fn triangle_expensive_sum() {
     let content = read_file("src/problems/triangle_expensive_path.txt");
     cal_path(reverse(content.split("\n").collect()));
 }
@@ -24,30 +24,26 @@ fn reverse(arr: Vec<&str>) -> Vec<&str> {
     rs
 }
 
-fn add(s: String, (n1, s1): (i32, String), (n2, s2): (i32, String)) -> (i32, String) {
-    let n = s.parse::<i32>().unwrap();
-    if n1 > n2 { (n1 + n, s + "-" + &*s1) } else { (n2 + n, s + "-" +&*s2) }
+fn add(s: &str, n1: i32, n2: i32) -> i32 {
+    let n = s.to_string().parse::<i32>().unwrap();
+    if n1 >= n2 { n1 + n } else { n2 + n}
 }
 
 fn cal_path(arr: Vec<&str>) {
-    let mut sum: Vec<i32> = Vec::new();
-    let mut path: Vec<String> = Vec::new();
+    let mut cur: Vec<i32> = Vec::new();
     for i in 0..arr.len() {
         let temp = String::from(arr[i]);
         let numbers: Vec<&str> = temp.split(" ").collect();
         if i == 0 {
             for each in numbers {
-                sum.push(each.to_string().parse::<i32>().unwrap());
-                path.push(each.to_string());
+                cur.push(each.to_string().parse::<i32>().unwrap())
             }
             continue
         }
         for j in 0..numbers.len() {
-            let (temp_sum, temp_path) = add(numbers[j].to_string(), (sum[j], path[j].to_string()), (sum[j+1], path[j+1].to_string()));
-            sum[j] = temp_sum;
-            path[j] = temp_path;
+            cur[j] = add(numbers[j], cur[j], cur[j+1])
         }
-        println!("numbers={:?}, cur={:?}", numbers, sum);
+        println!("numbers={:?}, cur={:?}", numbers, cur);
     }
-    println!("sum={}, path={}", sum[0], path[0]);
+    println!("sum={}", cur[0]);
 }
