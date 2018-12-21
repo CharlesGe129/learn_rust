@@ -51,3 +51,21 @@ fn trait_test() {
     print_area(Circle {x: 0.0, y: 0.0, radius: 2.0});
     print_angle(Square {x: 0.0, y: 0.0, side: 2.0});
 }
+
+fn trait_with_generics() {
+    use std::fmt::Debug;
+
+    fn foo<T: Debug + Clone>(s: T) {
+        s.clone();
+        println!("{:?}", s);
+    }
+
+    fn foo2(s: impl Debug + Clone) {
+        s.clone();
+        println!("{:?}", s);
+    }
+}
+
+// derive
+// #[derive(Debug)]
+// Clone, Copy, Debug, Default, Eq, Hash, Ord, PartialEq, PartialOrd

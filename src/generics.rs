@@ -54,3 +54,33 @@ fn polymorphism() {
     }
     */
 }
+
+fn add_test() {
+    #[derive(Debug, Copy, Clone)]
+    struct Point {
+        x: i32,
+        y: i32,
+    }
+
+    use std::ops::Add;
+
+    impl Add for Point {
+        type Output = Point;
+        fn add(self, p: Point) -> Point {
+            Point {
+                x: self.x + p.x,
+                y: self.y + p.y,
+            }
+        }
+    }
+
+    let a = Point{x: 1, y: 2};
+    let b = Point{x: 3, y: 4};
+    let c = a + b;
+    println!("a={:?}, b={:?}, add={:?}", a, b, c);
+
+    fn add<T: Add<T, Output=T>>(a: T, b: T) -> T {
+        a + b
+    }
+    println!("add()={:?}", add(a, b));
+}
